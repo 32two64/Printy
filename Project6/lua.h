@@ -3,13 +3,13 @@
 #include <string>
 
 
-int Address(int Offset) {
+int addy(int Offset) {
 	return (Offset - 0x00400000 + (DWORD)GetModuleHandle("RobloxPlayerBeta.exe"));
 }
 
 
 typedef int(__cdecl *SINGLETON)(int a1, const char *a2);
-SINGLETON SingletonPrint = (SINGLETON)Address(0x51EB70);
+SINGLETON SingletonPrint = (SINGLETON)addy(0x51EB70);
 
 
 void cnsb() {
